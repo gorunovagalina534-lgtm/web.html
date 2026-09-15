@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя визитка</title>
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="portfolio.html">Портфолио</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+</nav>
+
+<section id="block1" class="fade-in">
+    <h1>Привет, я <span>Галина</span></h1>
+    <p>Добро пожаловать на мой сайт-визитку! Я увлекаюсь веб-разработкой и создаю крутые проекты. Здесь ты узнаешь немного обо мне и моих достижениях.</p>
+</section>
+  
+<section id="block2" class="slide-in-left">
+    <img src="https://img.magnific.com/premium-photo/black-white-cat-grass_100800-3751.jpg" alt="Моё фото">
+    <p>Это я в процессе создания очередного шедевра 😊</p>
+</section>
+
+<section id="block3" class="scale-in">
+    <h2>🏆 Мои достижения</h2>
+    <ul>
+        <li>📱 Создала свой первый сайт в 2025 году</li>
+        <li>💻 Освоила HTML, CSS и JavaScript за 2 месяца</li>
+        <li>🚀 Запустила 3 проекта на GitHub</li>
+    </ul>
+</section>
+
+  <script>
+    // Анимация при прокрутке
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    animatedElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
